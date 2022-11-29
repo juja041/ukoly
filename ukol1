@@ -1,15 +1,15 @@
 def readfiles(file):
   pocet_radku = []
   try:
-    file.read()
+    a = open(file,"r")
     for radek in file:
       pocet_radku.append(radek)
-    file.close()
-  except AttributeError :
+    a.close()
+  except FileNotFoundError:
     print(pocet_radku)
     print(f"{file} není soubor!")
     
-  
+readfiles("text.txt")
   
 readfiles("brambora")
 
