@@ -1,0 +1,30 @@
+def readfiles(file):
+  pocet_radku = []
+  try:
+    file.read()
+    for radek in file:
+      pocet_radku.append(radek)
+    file.close()
+  except AttributeError :
+    print(pocet_radku)
+    print(f"{file} není soubor!")
+    
+  
+  
+readfiles("brambora")
+
+a = {"klic":"key"}
+def prohledavani_slovniku(klic,hodnota,slovnik):
+  if klic in slovnik:
+      if slovnik[klic] == hodnota:
+        return True
+      else: 
+        return False
+  else: 
+    print("Klic, ktery jste zadal neni ve sloviku")
+
+
+
+prohledavani_slovniku("klic","key",a)
+prohledavani_slovniku("kliy","key",a)
+prohledavani_slovniku("klic","kfy",a)
