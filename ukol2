@@ -1,0 +1,50 @@
+class Pojistenec:
+  def __init__(self,jmeno,prijmeni,vek,tel_cislo):
+    self.jmeno = jmeno
+    self.prijmeni = prijmeni
+    self.vek = vek
+    self.tel_cislo = tel_cislo
+  def __str__(self):
+    return "{jmeno}\t{prijmeni}\t{vek}\t{tel_cislo}".format(jmeno=self.jmeno, prijmeni=self.prijmeni, vek=self.vek, tel_cislo=self.tel_cislo)
+  
+
+rozhodnuti = input('''Vyberte si akci:
+1 - Pridat noveho pojisteneho
+2 - Vypsat vsechny pojistene
+3 - Vyhledat pojisteneho
+4 - Konec
+''')
+evidence = []
+while rozhodnuti != "4":
+  if rozhodnuti == "1" :
+    krestni_jmeno_p = input("Jmeno: ")
+    prijmeni_p = input("Prijmeni: ")
+    vek_p = input("Vek: ")
+    tel_cislo_p = input("tel. cislo: ")
+    
+    x = Pojistenec(krestni_jmeno_p,prijmeni_p,vek_p,tel_cislo_p)
+    evidence.append(x)
+    print('''Data byla ulozena
+    ''')
+  elif rozhodnuti == "2": 
+    for a in evidence:
+     print(a)
+      
+  elif rozhodnuti == "3":
+    a = input("Jeho jmeno:")
+    b= input("Jeho prijmeni:")
+    kontrola = []
+    for i in evidence:
+      if (i.jmeno) == a and i.prijmeni == b :
+        print (i)
+    kontrola.append("a")
+    if "a" not in kontrola: 
+      print("Neni u nas pojisteny")
+    
+  
+  rozhodnuti = input('''Vyberte si akci:
+1 - Pridat noveho pojisteneho
+2 - Vypsat vsechny pojistene
+3 - Vyhledat pojisteneho
+4 - Konec
+''')
